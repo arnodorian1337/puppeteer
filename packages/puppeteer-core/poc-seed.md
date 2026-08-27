@@ -1,0 +1,1 @@
+# Puppeteer Core PoC Seed\n\nThis file seeds a release-please changelog entry for puppeteer-core.\n
