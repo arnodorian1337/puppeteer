@@ -1,5 +1,67 @@
 # Changelog
 
+## [4.0.0](https://github.com/arnodorian1337/puppeteer/compare/browsers-v3.2.1...browsers-v4.0.0) (2026-08-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump min NodeJS to 22 ([#14973](https://github.com/arnodorian1337/puppeteer/issues/14973))
+* update min version - Node v20.19 and Typescript v5.0.1 ([#14364](https://github.com/arnodorian1337/puppeteer/issues/14364))
+* move packages to ESM only ([#14355](https://github.com/arnodorian1337/puppeteer/issues/14355))
+* make proxy agent optional peer dependency and update to v8 ([#14894](https://github.com/arnodorian1337/puppeteer/issues/14894))
+* remove public makeProgressCallback helper ([#13804](https://github.com/arnodorian1337/puppeteer/issues/13804))
+* replace extract-zip with OS tar.exe or unzip ([#14960](https://github.com/arnodorian1337/puppeteer/issues/14960))
+
+### 🎉 Features
+
+* allow downloading CfT linux-arm64 ([#15325](https://github.com/arnodorian1337/puppeteer/issues/15325)) ([fc984bd](https://github.com/arnodorian1337/puppeteer/commit/fc984bd16587832ed8ab8c24397e70f494698a41))
+* **browsers:** add experimental bisect CLI command ([#14746](https://github.com/arnodorian1337/puppeteer/issues/14746)) ([512d693](https://github.com/arnodorian1337/puppeteer/commit/512d69375b5d4e61f59ddfa70674cb2f814c61fa))
+* **browsers:** support custom logger ([#15259](https://github.com/arnodorian1337/puppeteer/issues/15259)) ([02da11a](https://github.com/arnodorian1337/puppeteer/commit/02da11ade14250fe6d1ed2d7676c6d07b96e1a3e))
+* move packages to ESM only ([#14355](https://github.com/arnodorian1337/puppeteer/issues/14355)) ([4c22177](https://github.com/arnodorian1337/puppeteer/commit/4c22177a7dcbd5a5fe6922eec75351bb56cd0336))
+
+
+### 🛠️ Fixes
+
+* **browsers:** add SHA-256 integrity verification for downloaded browser archives ([#15093](https://github.com/arnodorian1337/puppeteer/issues/15093)) ([65a0a8d](https://github.com/arnodorian1337/puppeteer/commit/65a0a8d2af4bf0e0acc974df8127ab9f25e84c9f))
+* **browsers:** validate channel in CLI launch for system browsers ([#15098](https://github.com/arnodorian1337/puppeteer/issues/15098)) ([873b993](https://github.com/arnodorian1337/puppeteer/commit/873b993eb6b002ddf79b762a3ca1c4f82e7db4b0))
+* computeSystemExecutablePath support validatePath ([#15340](https://github.com/arnodorian1337/puppeteer/issues/15340)) ([73da9a4](https://github.com/arnodorian1337/puppeteer/commit/73da9a41b32f26e995ac00b50c958e6e95fb2be2))
+* disable WebUIOmniboxPopup and WebUIOmniboxAimPopup features ([#15278](https://github.com/arnodorian1337/puppeteer/issues/15278)) ([5dc2964](https://github.com/arnodorian1337/puppeteer/commit/5dc2964de9fd5d22ee02d2f5c81284f4d6500431))
+* Disable WebUIReloadButton experiment ([#14925](https://github.com/arnodorian1337/puppeteer/issues/14925)) ([d9639e9](https://github.com/arnodorian1337/puppeteer/commit/d9639e9dfec81ddd0631bf88c0e673d0056f0632))
+* do not use shell for setup.exe ([#14959](https://github.com/arnodorian1337/puppeteer/issues/14959)) ([d8b5fd9](https://github.com/arnodorian1337/puppeteer/commit/d8b5fd9f5fe035d5246890872c4c7a1d758fa6cf))
+* fix tar.exe invocation ([#14997](https://github.com/arnodorian1337/puppeteer/issues/14997)) ([cce47de](https://github.com/arnodorian1337/puppeteer/commit/cce47de9040963d4ad8ec249c76569fd4fc8517e))
+* improve progress bar and install ([#15042](https://github.com/arnodorian1337/puppeteer/issues/15042)) ([51db32a](https://github.com/arnodorian1337/puppeteer/commit/51db32a5bb48f40cc635ac3eaa2ebb60e6f5bfd5))
+* launch browsers in detached mode on Windows to fix flakiness ([#15339](https://github.com/arnodorian1337/puppeteer/issues/15339)) ([8e1022b](https://github.com/arnodorian1337/puppeteer/commit/8e1022b543f27d9d517310435aaa2b299fe99d46))
+* remove public makeProgressCallback helper ([#13804](https://github.com/arnodorian1337/puppeteer/issues/13804)) ([0876ee1](https://github.com/arnodorian1337/puppeteer/commit/0876ee153008a0084839886f52b95e269c46578a))
+* replace extract-zip with OS tar.exe or unzip ([#14960](https://github.com/arnodorian1337/puppeteer/issues/14960)) ([55df174](https://github.com/arnodorian1337/puppeteer/commit/55df174d20bb8c3e8cce73d5d7ad8d1cfc9a560f))
+* run hooks even if we try to kill the process ([#15249](https://github.com/arnodorian1337/puppeteer/issues/15249)) ([49353ca](https://github.com/arnodorian1337/puppeteer/commit/49353ca922bdd5bf788bf10a67396567776ad9cc))
+* support concurrency in progress bars ([#15045](https://github.com/arnodorian1337/puppeteer/issues/15045)) ([ab0171d](https://github.com/arnodorian1337/puppeteer/commit/ab0171d8f4206bdb9dd4e93c2db8d28530bf3fb9))
+* tell the user how to recover a partial browser folder ([#15319](https://github.com/arnodorian1337/puppeteer/issues/15319)) ([bbc51bd](https://github.com/arnodorian1337/puppeteer/commit/bbc51bd2eff8a4423bf8432c41a31178b13ea9f7))
+* update browsers to trigger release ([#14984](https://github.com/arnodorian1337/puppeteer/issues/14984)) ([bf05fb9](https://github.com/arnodorian1337/puppeteer/commit/bf05fb9bf5bac997e365eda2e31c6067e5ec1677))
+* update docs text ([#14992](https://github.com/arnodorian1337/puppeteer/issues/14992)) ([36527b8](https://github.com/arnodorian1337/puppeteer/commit/36527b8b9dd856e11a372b46cba23409e5613573))
+* use powershell as fallback to unzip on Windows ([#15033](https://github.com/arnodorian1337/puppeteer/issues/15033)) ([05f7b18](https://github.com/arnodorian1337/puppeteer/commit/05f7b1829b0157d8ef46939fe86e43dbbcbad10e))
+
+
+### 📄 Documentation
+
+* bump min NodeJS to 22 ([#14973](https://github.com/arnodorian1337/puppeteer/issues/14973)) ([4b6ddc3](https://github.com/arnodorian1337/puppeteer/commit/4b6ddc3a2631518651187b7795e36fae9a976121))
+* fix the typos on documentation ([#15167](https://github.com/arnodorian1337/puppeteer/issues/15167)) ([ab74e6a](https://github.com/arnodorian1337/puppeteer/commit/ab74e6a6720ec05768979e3c2d9b26bcb5cd763f))
+* update min version - Node v20.19 and Typescript v5.0.1 ([#14364](https://github.com/arnodorian1337/puppeteer/issues/14364)) ([96f3780](https://github.com/arnodorian1337/puppeteer/commit/96f3780289d42557b648a18d806843a28da7e2f5))
+
+
+### ⚡ Performance
+
+* **browsers:** update logger signature ([#14968](https://github.com/arnodorian1337/puppeteer/issues/14968)) ([0f5a8d8](https://github.com/arnodorian1337/puppeteer/commit/0f5a8d85a0b531234758bcb8a7ff4371b2e0c960))
+
+
+### 🏗️ Refactor
+
+* drop semver ([#15029](https://github.com/arnodorian1337/puppeteer/issues/15029)) ([058cd5a](https://github.com/arnodorian1337/puppeteer/commit/058cd5ab994eb9a291001a9de37c767776e83be4))
+* extract zip archives with yauzl instead of CLI tools ([#15085](https://github.com/arnodorian1337/puppeteer/issues/15085)) ([04a9587](https://github.com/arnodorian1337/puppeteer/commit/04a95878db8eec2263d895fed2e98180a158ec76))
+* make proxy agent optional peer dependency and update to v8 ([#14894](https://github.com/arnodorian1337/puppeteer/issues/14894)) ([501cccc](https://github.com/arnodorian1337/puppeteer/commit/501cccc18913f497561a0dbdbd8738c3e72fadbe))
+* remove debug dependency ([#15023](https://github.com/arnodorian1337/puppeteer/issues/15023)) ([94d1e1c](https://github.com/arnodorian1337/puppeteer/commit/94d1e1c3dc84ed102d2e801a4e6343cd9fd4a9af))
+* remove progress dependency ([#15026](https://github.com/arnodorian1337/puppeteer/issues/15026)) ([e7d1a14](https://github.com/arnodorian1337/puppeteer/commit/e7d1a14b6e580567a8c897c2bc5d6bcfc90b26e5))
+* replace tar-fs with modern-tar ([#15028](https://github.com/arnodorian1337/puppeteer/issues/15028)) ([054afed](https://github.com/arnodorian1337/puppeteer/commit/054afedbd39a6d4e57420c9edab437fbda706321))
+
 ## [3.2.1](https://github.com/puppeteer/puppeteer/compare/browsers-v3.2.0...browsers-v3.2.1) (2026-08-17)
 
 
