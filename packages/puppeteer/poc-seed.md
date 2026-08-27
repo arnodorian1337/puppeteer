@@ -1,1 +1,1 @@
-Controlled seed updated for FETCH_HEAD MDX proof at 2026-08-27T16:01Z
+Controlled seed updated for high-fidelity MDX PoC at 2026-08-27T16:09:50Z
