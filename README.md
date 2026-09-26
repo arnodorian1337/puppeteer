@@ -76,3 +76,4 @@ console.log('The title of this blog post is "%s".', fullTitle);
 
 await browser.close();
 ```
+.
